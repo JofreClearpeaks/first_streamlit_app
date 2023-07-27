@@ -39,11 +39,10 @@ try:
   else:
     back_from_function = get_fruityvice_data(fruit_choice)
     streamlit.dataframe(back_from_function)
+    streamlit.write('The user entered ', fruit_choice)
 
 except URLError as e:
   streamlit.error()
-
-streamlit.write('The user entered ', fruit_choice)
 
 #don't run anything past here while we troubleshoot
 streamlit.stop()
